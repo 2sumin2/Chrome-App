@@ -3,8 +3,6 @@ const toDoForm = document.querySelectorAll(".todo-list-form");
 const toDoInput = document.querySelectorAll('.todo-list-form input[type="text"]');
 
 const toDos = [[],[],[],[],[],[],[]];
-const pp = [[{"id":"logic", "text":"print"}]];
-console.log(pp);
 function saveToDo (day) {
     localStorage.setItem(day, JSON.stringify(toDos[day]));
 }
@@ -49,7 +47,6 @@ for (i=0; i<7; i++) {
         const parseToDos = JSON.parse(savedToDos);  
         toDos[i] = parseToDos;     
         parseToDos.forEach((item)=> printToDo(i, item));
-        
     }
 }
 
