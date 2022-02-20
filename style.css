@@ -1,0 +1,33 @@
+button {
+    cursor:pointer;
+}
+
+#color{
+    background-color:transparent;
+    cursor:pointer;
+    position:absolute;
+    top:30px;
+    right:30px;
+    border-radius: 80px;
+    height: 40px;
+    width: 60px;
+    font-family: fantasy;
+    font-size: 12pt;
+}
+
+.colorList {
+    list-style: none;
+    position:absolute;
+    top:60px;
+    right:48px;
+}
+
+.changeColor {
+    border-radius: 100px;
+    height: 15px;
+    width: 15px;
+}
+
+.hidden {
+    display:none;
+}
