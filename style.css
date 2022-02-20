@@ -94,3 +94,49 @@ button {
     margin-left:10pt;
 }
 
+.weeklytask {
+    position:absolute;
+    top:200px;
+    left:150px;
+}
+
+.weeklytask caption{
+    font-family: Papyrus, fantasy;
+    font-size: 15pt;
+    text-align: left;
+    padding: 13px;
+}
+.weeklytask input[type="submit"], button{
+    background-color:transparent;
+    cursor:pointer;
+    border:0;
+    font-size: 15pt;
+}
+
+.newtodo{
+    background-color:transparent;
+    width:180px;
+    font-size: 13pt;
+    font-family: Papyrus, fantasy;
+    border: 0;
+}
+
+.weeklytask th{
+    font-family: Papyrus, fantasy;
+    border:2px solid;
+    font-size: 13pt;
+    height: 30px;
+    width: 220px;
+    padding-top:3px;
+    padding-bottom:3px;
+}
+
+.weeklytask td{
+    font-family: Papyrus, fantasy;
+    border:2px solid;
+    font-size: 13pt;
+    height: 350px;
+    width: 220px;
+    padding:3px;
+    vertical-align: top;
+}

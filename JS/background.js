@@ -3,7 +3,7 @@ const colorBtn = document.querySelector("#color");
 const colorListDiv = document.querySelector(".colorList");
 const colorBtnInList = document.querySelectorAll(".changeColor");
 
-document.body.style.background = `linear-gradient(45deg, ${backgroundColorList[0]})`;
+document.body.style.background = `linear-gradient(45deg, ${backgroundColorList[Math.floor(Math.random()*backgroundColorList.length)]})`;
 for (i=0; i<colorBtnInList.length; i++){
     colorBtnInList[i].style.background = `linear-gradient(45deg, ${backgroundColorList[i]})`;
 }

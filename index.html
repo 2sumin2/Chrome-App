@@ -28,8 +28,35 @@
             <input required maxlength="15" type="text" placeholder="Please write you name" class=""/>
             <input type="submit" value="Enter&crarr;"/>
         </form>
+        <table class="weeklytask hidden">
+            <caption><b>📃 Weekly Task </b></caption>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                <th>Sun</th>
+            <tr>
+                <td><ul class="todo-list" id="0" > 
+                </ul><form class="todo-list-form" id="0" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                <td><ul class="todo-list" id="1" >
+                </ul><form class="todo-list-form" id="1" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                <td><ul class="todo-list" id="2" >
+                </ul><form class="todo-list-form" id="2" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                <td><ul class="todo-list" id="3" >
+                </ul><form class="todo-list-form" id="3" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                <td><ul class="todo-list" id="4">
+                </ul><form class="todo-list-form" id="4" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo"  maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                <td><ul class="todo-list" id="5">
+                </ul><form class="todo-list-form" id="5" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                <td><ul class="todo-list" id="6">
+                </ul><form class="todo-list-form" id="6" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+            </tr>
+        </table>
         <script src="JS/background.js"></script>
         <script src="JS/greeting.js"></script>
         <script src="JS/clock.js"></script>
+        <script src="JS/todo.js"></script>
 </body>
 </html>
