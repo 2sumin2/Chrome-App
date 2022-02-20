@@ -8,6 +8,9 @@
     <title>VanillaJSChromeApp</title>
 </head>
 <body>
+        <b id="date"></b>
+        <b id="clock"></b>
+        <h1 id="greeting" class="hidden">Hello</h1>
         <button id="color"><b>Color</b></button>  
         <ul class="colorList hidden">
             <li><button class="changeColor" id="0" onclick="changeBackgroundColor(this.id)"></button></li>
@@ -21,12 +24,12 @@
             <li><button class="changeColor" id="8" onclick="changeBackgroundColor(this.id)"></button></li>
             <li><button class="changeColor" id="9" onclick="changeBackgroundColor(this.id)"></button></li>
         </ul>
-        <h1 id="greeting" class="hidden">Hello</h1>
         <form id="login-form" class="hidden">
             <input required maxlength="15" type="text" placeholder="Please write you name" class=""/>
             <input type="submit" value="Enter&crarr;"/>
         </form>
         <script src="JS/background.js"></script>
         <script src="JS/greeting.js"></script>
+        <script src="JS/clock.js"></script>
 </body>
 </html>
