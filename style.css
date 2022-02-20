@@ -8,10 +8,10 @@ button {
     position:absolute;
     top:30px;
     right:30px;
-    border-radius: 80px;
+    border-radius: 67% 35% 80% 50%;
     height: 40px;
-    width: 60px;
-    font-family: fantasy;
+    width: 80px;
+    font-family: Papyrus, fantasy;
     font-size: 12pt;
 }
 
@@ -19,7 +19,7 @@ button {
     list-style: none;
     position:absolute;
     top:60px;
-    right:48px;
+    right:58px;
 }
 
 .changeColor {
@@ -31,3 +31,42 @@ button {
 .hidden {
     display:none;
 }
+
+#greeting {
+    font-family: Papyrus, fantasy;
+    position:absolute;
+    top:20px;
+    left:830px;
+}
+
+#login-form{
+    position:absolute;
+    top:460px;
+    right:650px;
+    text-align: center;
+    justify-content: center;
+    background-color:transparent;
+}
+
+#login-form input{
+    font-family: Lucida Console, monospace;
+    height: 30pt;
+    text-align: center;
+    justify-content: center;
+    background-color:transparent;  
+}
+
+#login-form input[type="text"]{
+    font-size: 20pt;
+    width: 470px;
+    border:0 ;
+    border-bottom:3px double;
+}
+
+#login-form input[type="submit"]{
+    font-size: 14pt;
+    width: 110px;
+    border-radius: 60% 50% 60% 70%;
+    margin-left:10pt;
+}
+
