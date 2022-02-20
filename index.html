@@ -11,23 +11,13 @@
         <b id="date"></b>
         <b id="clock"></b>
         <h1 id="greeting" class="hidden">Hello</h1>
-        <button id="color"><b>Color</b></button>  
-        <ul class="colorList hidden">
-            <li><button class="changeColor" id="0" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="1" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="2" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="3" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="4" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="5" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="6" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="7" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="8" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="9" onclick="changeBackgroundColor(this.id)"></button></li>
-        </ul>
         <form id="login-form" class="hidden">
             <input required maxlength="15" type="text" placeholder="Please write you name" class=""/>
             <input type="submit" value="Enter&crarr;"/>
         </form>
+        <div id="weather">
+            <b><span></span></b>
+        </div>
         <table class="weeklytask hidden">
             <caption><b>📃 Weekly Task </b></caption>
                 <th>Mon</th>
@@ -54,9 +44,23 @@
                 </ul><form class="todo-list-form" id="6" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
             </tr>
         </table>
+        <button id="color"><b>Color</b></button>  
+        <ul class="colorList hidden">
+            <li><button class="changeColor" id="0" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="1" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="2" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="3" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="4" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="5" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="6" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="7" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="8" onclick="changeBackgroundColor(this.id)"></button></li>
+            <li><button class="changeColor" id="9" onclick="changeBackgroundColor(this.id)"></button></li>
+        </ul>
         <script src="JS/background.js"></script>
         <script src="JS/greeting.js"></script>
         <script src="JS/clock.js"></script>
         <script src="JS/todo.js"></script>
+        <script src="JS/weather.js"></script>
 </body>
 </html>

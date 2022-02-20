@@ -24,6 +24,14 @@ button {
     font-size: 22pt;
 }
 
+#weather span{
+    position:absolute;
+    bottom:55px;
+    left:35px;
+    font-family: Papyrus, fantasy;
+    font-size: 20pt;
+}
+
 #color{
     background-color:transparent;
     cursor:pointer;
@@ -46,9 +54,10 @@ button {
 }
 
 .changeColor {
+    border: 3px solid;
     border-radius: 100px;
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
     margin:3px;
 }
 
