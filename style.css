@@ -78,9 +78,9 @@ button {
     font-family: Papyrus, fantasy;
     height:100%; 
     width:100%; 
-    vertical-align:middle;    
     text-align:center;
-    padding-top: 30px;
+    padding-top: 50px;
+    cursor: pointer;
 }
 
 #login-form{
@@ -123,6 +123,7 @@ button {
     left: 50%;
     margin-top: -250px;
     margin-left: -800px; 
+    z-index: 1;
 }
 
 .weeklytask caption {
@@ -184,5 +185,13 @@ button {
 
 .done {
     text-decoration: line-through;
+}
+
+#heart {
+    position:fixed;
+    height: 100%;
+    width:100%;
+    cursor: pointer;
+    z-index:-1;
 }
 
