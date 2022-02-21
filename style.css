@@ -27,7 +27,7 @@ button {
 
 
 #weather span{
-    position:absolute;
+    position:fixed;
     bottom:55px;
     left:35px;
     font-family: Papyrus, fantasy;
@@ -128,9 +128,9 @@ button {
 #deleteAll{
     font-family: Papyrus, fantasy;
     font-size: 15pt;
-    position: absolute;
-    bottom: 200px;
-    right: 160px;
+    position:fixed;
+    bottom:55px;
+    right:35px;
 }
 
 .weeklytask input[type="submit"], button{
