@@ -114,13 +114,25 @@ button {
     margin-top: -250px;
     margin-left: -800px; 
 }
+#title1 {
+    text-align: right;
+    caption-side: bottom;
+}
 
-.weeklytask caption{
+#title2 {
     font-family: Papyrus, fantasy;
     font-size: 15pt;
     text-align: left;
     padding: 13px;
 }
+
+#title1 button{
+    font-family: Papyrus, fantasy;
+    font-size: 15pt;
+    text-align: left;
+    padding: 13px;
+}
+
 .weeklytask input[type="submit"], button{
     background-color:transparent;
     cursor:pointer;
@@ -165,12 +177,3 @@ button {
     text-decoration: line-through;
 }
 
-#deleteAll {
-    font-family: Papyrus, fantasy;
-    font-size: 15pt;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: +230px;
-    margin-left: +680px; 
-}
