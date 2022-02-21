@@ -26,10 +26,17 @@ button {
 }
 
 
-#weather span{
+#weather img{
     position:fixed;
     bottom:55px;
     left:35px;
+    width:60px;
+}
+
+#weather span{
+    position:fixed;
+    bottom:55px;
+    left:105px;
     font-family: Papyrus, fantasy;
     font-size: 20pt;
 }
@@ -127,7 +134,7 @@ button {
 
 #deleteAll{
     font-family: Papyrus, fantasy;
-    font-size: 15pt;
+    font-size: 20pt;
     position:fixed;
     bottom:55px;
     right:35px;
