@@ -164,3 +164,13 @@ button {
 .done {
     text-decoration: line-through;
 }
+
+#deleteAll {
+    font-family: Papyrus, fantasy;
+    font-size: 15pt;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: +230px;
+    margin-left: +680px; 
+}

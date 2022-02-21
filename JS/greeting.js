@@ -3,12 +3,14 @@ const loginInput = loginForm.querySelector("input");
 const sayHello = document.querySelector("#greeting");
 const savedUsername = localStorage.getItem("username");
 const taskTable = document.querySelector(".weeklytask");
+const deleteAllBtn = document.querySelector("#deleteAll");
 
 function onLogIn(event) {
     event.preventDefault();
     const username = loginInput.value;
     loginForm.classList.add("hidden");
     taskTable.classList.remove("hidden");
+    deleteAllBtn.classList.remove("hidden");
     localStorage.setItem("username", username);
     printGreeting(username);
 }
@@ -23,6 +25,7 @@ if (savedUsername == null) {
 } else {
     printGreeting(savedUsername);
     taskTable.classList.remove("hidden");
+    deleteAllBtn.classList.remove("hidden");
 }
 
 loginForm.addEventListener("submit", onLogIn);

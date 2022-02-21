@@ -1,6 +1,7 @@
 const toDoList = document.querySelectorAll(".todo-list");
 const toDoForm = document.querySelectorAll(".todo-list-form");
 const toDoInput = document.querySelectorAll('.todo-list-form input[type="text"]');
+const deleteAllBtn = document.querySelector("#deleteAll");
 
 const toDos = [[],[],[],[],[],[],[]];
 function saveToDo (day) {
@@ -49,7 +50,6 @@ function printToDo(day, newToDo) {
     } else {
         checkBtn.innerText =  "☐ ";
     }
-    console.log(newToDo.done);
     checkBtn.classList.toggle("check");
     deleteBtn.innerText = " 〤";
     deleteBtn.addEventListener("click", deleteToDo);
@@ -85,4 +85,12 @@ for (i=0; i<7; i++) {
     }
 }
 
+function clearTable() {
+    for (i=0; i<7; i++) {
+            localStorage.removeItem(i);
+        }
+    window.location.reload();
+}
+
+deleteAllBtn.addEventListener("click", clearTable);
 
