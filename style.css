@@ -114,23 +114,20 @@ button {
     margin-top: -250px;
     margin-left: -800px; 
 }
-#title1 {
-    text-align: right;
-    caption-side: bottom;
-}
 
-#title2 {
+.weeklytask caption {
     font-family: Papyrus, fantasy;
     font-size: 15pt;
     text-align: left;
     padding: 13px;
 }
 
-#title1 button{
+#deleteAll{
     font-family: Papyrus, fantasy;
     font-size: 15pt;
-    text-align: left;
-    padding: 13px;
+    position: absolute;
+    bottom: 200px;
+    right: 160px;
 }
 
 .weeklytask input[type="submit"], button{

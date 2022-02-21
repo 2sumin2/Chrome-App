@@ -19,8 +19,7 @@
             <b><span></span></b>
         </div>
         <table class="weeklytask hidden">
-            <caption id="title1"><button id="deleteAll"><b>🗑️ Delete All</b></button></caption>
-            <caption id="title2"><b>📃 Weekly Task </b></caption>
+            <caption><b>📃 Weekly Task </b></caption>
                 <th>Mon</th>
                 <th>Tue</th>
                 <th>Wed</th>
@@ -43,7 +42,8 @@
                 </ul><form class="todo-list-form" id="5" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="6">
                 </ul><form class="todo-list-form" id="6" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
-            </tr>    
+            </tr>  
+            <button class="hidden" id="deleteAll"><b>🗑️ Delete All</b></button>  
         </table>
         
         
