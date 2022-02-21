@@ -15,37 +15,72 @@ function deleteToDo (event) {
     saveToDo(day);
 }
 
+
+function finishToDo(event) {
+    const li = event.target.parentElement;
+    const day = li.parentElement.id;
+    
+    for (i=0; i<toDos[day].length;i++) {
+        if (toDos[day][i].id == li.id){
+            const changeElement = toDos[day][i];
+            if (changeElement.done == "yes") {
+                event.target.innerText = "☐ ";
+                changeElement.done = "no";
+            } else {
+                event.target.innerText = "✓ ";
+                changeElement.done = "yes";
+            }
+        }
+    }
+    li.classList.toggle("done");
+    saveToDo(day);
+}
+
 function printToDo(day, newToDo) {
     const li = document.createElement("li");
     li.id = newToDo.id;
+    const checkBtn = document.createElement("button");
     const span = document.createElement("span");
-    const btn = document.createElement("button");
+    const deleteBtn = document.createElement("button");
     span.innerText = newToDo.text;
-    btn.innerText = " ⊘";
-    btn.addEventListener("click", deleteToDo);
+    if (newToDo.done == "yes") {
+        checkBtn.innerText = "✓ ";
+        li.classList.add("done");
+    } else {
+        checkBtn.innerText =  "☐ ";
+    }
+    console.log(newToDo.done);
+    checkBtn.classList.toggle("check");
+    deleteBtn.innerText = " 〤";
+    deleteBtn.addEventListener("click", deleteToDo);
+    checkBtn.addEventListener("click", finishToDo);
+    li.appendChild(checkBtn);
     li.appendChild(span);
-    li.appendChild(btn);
+    li.appendChild(deleteBtn);
     toDoList[day].appendChild(li);
 }
 
 function toDoSubmit(event, day) {
     event.preventDefault();
     const newToDo = toDoInput[day].value;
-    const newToDoObj = {
-        text:newToDo,
-        id: Date.now()
-    }
-    toDos[day].push(newToDoObj);
-    toDoInput[day].value = "";
-    printToDo(day, newToDoObj);
-    saveToDo(day);
+    if(newToDo.split() != "") {
+        const newToDoObj = {
+            text:newToDo,
+            id: Date.now(),
+            done : "no"
+        }
+        toDos[day].push(newToDoObj);
+        toDoInput[day].value = "";
+        printToDo(day, newToDoObj);
+        saveToDo(day);
+    };
 }
 
 for (i=0; i<7; i++) {
     const savedToDos = localStorage.getItem(i);
     if(savedToDos != null){
         const parseToDos = JSON.parse(savedToDos);  
-        toDos[i] = parseToDos;     
+        toDos[i] = parseToDos;
         parseToDos.forEach((item)=> printToDo(i, item));
     }
 }

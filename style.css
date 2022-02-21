@@ -155,3 +155,12 @@ button {
     padding:3px;
     vertical-align: top;
 }
+
+.todo-list {
+    list-style:none;
+    padding-left:0px;
+}
+
+.done {
+    text-decoration: line-through;
+}
