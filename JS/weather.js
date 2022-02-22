@@ -10,7 +10,7 @@ function onGeoOk(position) {
         .then((data) => {
         const weatherConainer = document.querySelector("#weather span");
         const iconId = data.weather[0].icon;
-        const iconURL = "http://openweathermap.org/img/w/" + iconId + ".png";
+        const iconURL = "https://openweathermap.org/img/w/" + iconId + ".png";
         document.querySelector("#weatherIcon").src = iconURL;
         weatherConainer.innerText = `${data.name} / ${data.main.temp}°`; 
         });
