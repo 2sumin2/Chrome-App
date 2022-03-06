@@ -19,7 +19,17 @@
         <!--D-DAY-->
         <div class="ddaybox">
             <b id="dday">D-day</b>
-            <button>+ 추가하기</button>
+            <button id="dday-add">+ 추가하기</button>
+            <form class="hidden">
+                <input type="text" placeholder="디데이 이름" required/>
+                <input type="date" required/>
+                <input type="submit" value="저장">
+            </form>
+            <div class="hidden">
+                <b><span id="dday-name">중간고사</span></b>
+                <b><span id="dday-remaining">D-30</span></b>
+                <span id="dday-date"> 2022-10-5</span>
+                <button id="dday-delete">X</button></div>
         </div>
         <!---MEMO-->
         <div class="memobox">
@@ -106,5 +116,6 @@
         <script src="JS/todo.js"></script>
         <script src="JS/weather.js"></script>
         <script src="JS/memo.js"></script>
+        <script src="JS/dday.js"></script>
 </body>
 </html>
