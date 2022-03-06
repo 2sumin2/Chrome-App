@@ -62,17 +62,21 @@
             <button class="changeColor" id="9" onclick="changeBackgroundColor(this.id)"></button>
         </div>
         <!---WEEKLY TO-DO LIST-->
+        <div class="category">
+            <button>📜 Monthly Task</button>
+            <button>📃 Weekly Task</button></div>
+        <div class="">
         <table class="weeklytask hidden">
             <caption><b>📃 Weekly Task </b></caption>
+                <th style="color:brown">Sun</th>
                 <th>Mon</th>
                 <th>Tue</th>
                 <th>Wed</th>
                 <th>Thu</th>
                 <th>Fri</th>
-                <th>Sat</th>
-                <th>Sun</th>
+                <th style="color:rgb(47, 47, 167)">Sat</th>
             <tr>
-                <td><ul class="todo-list" id="0" > 
+                <td style="border-color:brown"><ul class="todo-list" id="0" > 
                 </ul><form class="todo-list-form" id="0" onsubmit="toDoSubmit(event, this.id)">
                     <input type="submit" value="+"/>
                     <input class="newtodo" maxlength="30" type="text"/></form></td>
@@ -96,12 +100,32 @@
                 </ul><form class="todo-list-form" id="5" onsubmit="toDoSubmit(event, this.id)">
                     <input type="submit" value="+"/>
                     <input class="newtodo" maxlength="30" type="text"/></form></td>
-                <td><ul class="todo-list" id="6">
+                <td style="border-color:rgb(47, 47, 167)"><ul class="todo-list" id="6">
                 </ul><form class="todo-list-form" id="6" onsubmit="toDoSubmit(event, this.id)">
                     <input type="submit" value="+"/>
                     <input class="newtodo" maxlength="30" type="text"/></form></td>
             </tr>  
         </table>
+    </div>
+    <table class="monthlytask">
+        <caption><b>📜 Monthly Task </b></caption>
+        <thead>
+            <td><input type="button" value="<"/></td>
+            <td id="year-month" colspan="3"><td>
+			<td><input type="button" value=">"/></td>
+        </thead>
+        <tbody>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+            <tr></tr>
+        </tbody>
+            
+    </table>        
         <button class="hidden" id="deleteAll"><b>🗑️ delete all</b></button>  
     </div>
         <!---------------LOGIN---------------->
@@ -114,6 +138,7 @@
         <script src="JS/greeting.js"></script>
         <script src="JS/clock.js"></script>
         <script src="JS/weeklytodo.js"></script>
+        <script src="JS/monthlytodo.js"></script>
         <script src="JS/weather.js"></script>
         <script src="JS/memo.js"></script>
         <script src="JS/dday.js"></script>
