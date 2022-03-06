@@ -4,13 +4,27 @@ const sayHello = document.querySelector("#greeting");
 const savedUsername = localStorage.getItem("username");
 const taskTable = document.querySelector(".weeklytask");
 const clearBtn = document.querySelector("#deleteAll");
+const sideBox = document.querySelector(".sidebox");
+const mainBox = document.querySelector(".mainbox");
 
-function onLogIn(event) {
-    event.preventDefault();
-    const username = loginInput.value;
+function loginPage() {
+    loginForm.classList.remove("hidden");
+    taskTable.classList.add("hidden");
+    clearBtn.classList.add("hidden");
+    sideBox.classList.add("hidden");
+    mainBox.classList.add("hidden");
+}
+function MainPage() {
     loginForm.classList.add("hidden");
     taskTable.classList.remove("hidden");
     clearBtn.classList.remove("hidden");
+    sideBox.classList.remove("hidden");
+    mainBox.classList.remove("hidden");
+}
+function onLogIn(event) {
+    event.preventDefault();
+    const username = loginInput.value;
+    MainPage();
     localStorage.setItem("username", username);
     printGreeting(username);
 }
@@ -24,8 +38,7 @@ if (savedUsername == null) {
     loginForm.classList.remove("hidden");
 } else {
     printGreeting(savedUsername);
-    taskTable.classList.remove("hidden");
-    clearBtn.classList.remove("hidden");
+    MainPage();
 }
 
 loginForm.addEventListener("submit", onLogIn);

@@ -9,7 +9,7 @@
 </head>
 <body>
     <!---------------SIDE-BOX---------------->
-    <div class="sidebox">
+    <div class="sidebox hidden">
         <b id="greeting" class="hidden">Hello</b>
         <!--DATE-TIME-->
         <div class="daybox">
@@ -46,7 +46,7 @@
         </div>
     </div>
     <!---------------MAIN-BOX---------------->
-    <div class="mainbox">
+    <div class="mainbox hidden">
         <!--BACKGROUND COLOR-->
         <button id="color"><b>Color</b></button>  
         <div class="colorList hidden">
@@ -63,11 +63,9 @@
         </div>
         <!---WEEKLY TO-DO LIST-->
         <div class="category">
-            <button>📜 Monthly Task</button>
-            <button>📃 Weekly Task</button></div>
-        <div class="">
+            <button id="category2"><b>📃 Weekly Task </b></button>
+            <button id="category1"><b>📜 Calendar</b></button></div>
         <table class="weeklytask hidden">
-            <caption><b>📃 Weekly Task </b></caption>
                 <th style="color:brown">Sun</th>
                 <th>Mon</th>
                 <th>Tue</th>
@@ -106,23 +104,22 @@
                     <input class="newtodo" maxlength="30" type="text"/></form></td>
             </tr>  
         </table>
-    </div>
-    <table class="monthlytask">
-        <caption><b>📜 Monthly Task </b></caption>
+    <table class="monthlytask hidden" style="width:95%; margin-left:2%">
         <thead>
-            <td><input type="button" value="<"/></td>
-            <td id="year-month" colspan="3"><td>
-			<td><input type="button" value=">"/></td>
+            <th style="background:transparent; border:0" colspan="2"></th>
+            <th style="background:transparent; border:0"><button id="premonth"><</button></th>
+            <th style="background:transparent; border:0"id="year-month"></th>
+			<th style="background:transparent; border:0"><button id="nextmonth">></button></th>
+            <th style="background:transparent; border:0" colspan="2"></th>
         </thead>
         <tbody>
+            <th style="color:brown;">Sun</th>
             <th>Mon</th>
             <th>Tue</th>
             <th>Wed</th>
             <th>Thu</th>
             <th>Fri</th>
-            <th>Sat</th>
-            <th>Sun</th>
-            <tr></tr>
+            <th style="color:rgb(47, 47, 167)">Sat</th>
         </tbody>
             
     </table>        

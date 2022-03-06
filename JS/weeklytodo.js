@@ -2,6 +2,8 @@ const toDoList = document.querySelectorAll(".todo-list");
 const toDoForm = document.querySelectorAll(".todo-list-form");
 const toDoInput = document.querySelectorAll('.todo-list-form input[type="text"]');
 const deleteAllBtn = document.querySelector("#deleteAll");
+const categoryMonth = document.querySelector("#category1");
+const categoryWeek = document.querySelector("#category2");
 
 const toDos = [[],[],[],[],[],[],[]];
 function saveToDo (day) {
@@ -93,3 +95,11 @@ function clearTable() {
 
 deleteAllBtn.addEventListener("click", clearTable);
 
+categoryMonth.addEventListener("click", function() {
+    taskTable.classList.add("hidden");
+    monthlyTaskTable.classList.remove("hidden");
+});
+categoryWeek.addEventListener("click", function() {
+    taskTable.classList.remove("hidden");
+    monthlyTaskTable.classList.add("hidden");
+});

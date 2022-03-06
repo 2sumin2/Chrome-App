@@ -267,18 +267,30 @@ button {
 }
 
 /* -----WEEKLY-TO-DO-LIST----- */
-.weeklytask {
-    position: absolute;
-    top: 10%;
+.category button{
+    font-family: Papyrus, fantasy;
+    padding:1%;
+}
+.monthlytask ,.weeklytask{
     z-index: 1;
     margin-left: 20px;
     margin-right: 20px;
 }
-.weeklytask caption {
+.monthlytask{
+    position: absolute;
+    top: 13%;
+}
+.weeklytask{
+    position: absolute;
+    top: 25%;
+}
+#year-month{
     font-family: Papyrus, fantasy;
-    font-size: 15pt;
-    text-align: left;
-    padding: 13px;
+    font-size: 18pt;
+}
+.monthlytask input[type="submit"]{
+    background-color: transparent;
+    border:0;
 }
 .weeklytask input[type="submit"], button{
     background-color:transparent;
@@ -293,7 +305,7 @@ button {
     font-family: Papyrus, fantasy;
     border: 0.5px groove;
 }
-.weeklytask th{
+.weeklytask th, .monthlytask th{
     font-family: Papyrus, fantasy;
     border:2px solid;
     font-size: 11pt;
@@ -303,11 +315,21 @@ button {
     padding-bottom:1px;
     background-color: rgba( 255, 255, 255, 0.5 );
 }
+.monthlytask td{
+    font-family: Papyrus, fantasy;
+    border:2px solid;
+    font-size: 11pt;
+    height: 100px;
+    width: 8%;
+    padding:1px;
+    vertical-align: top;
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
 .weeklytask td{
     font-family: Papyrus, fantasy;
     border:2px solid;
     font-size: 11pt;
-    height: 500px;
+    height: 400px;
     width: 8%;
     padding:1px;
     vertical-align: top;
@@ -320,7 +342,6 @@ button {
 .done {
     text-decoration: line-through;
 }
-
 #deleteAll{
     background-color: rgba( 255, 255, 255, 0.5 );
     font-family: Papyrus, fantasy;
