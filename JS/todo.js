@@ -16,7 +16,6 @@ function deleteToDo (event) {
     saveToDo(day);
 }
 
-
 function finishToDo(event) {
     const li = event.target.parentElement;
     const day = li.parentElement.id;

@@ -8,16 +8,50 @@
     <title>VanillaJSChromeApp</title>
 </head>
 <body>
-        <b id="date"></b>
-        <b id="clock"></b>
-        <h1 id="greeting" class="hidden">Hello</h1>
-        <form id="login-form" class="hidden">
-            <input required maxlength="15" type="text" placeholder="Please write you name" class=""/>
-            <input type="submit" value="Enter&crarr;"/>
-        </form>
-        <div id="weather"><img id="weatherIcon" src="" alt="Weather Icon" >
-            <b><span></span></b>
+    <!---------------SIDE-BOX---------------->
+    <div class="sidebox">
+        <b id="greeting" class="hidden">Hello</b>
+        <!--DATE-TIME-->
+        <div class="daybox">
+            <b id="date"></b>
+            <b id="clock"></b>
         </div>
+        <!--D-DAY-->
+        <div class="ddaybox">
+            <b id="dday">D-day</b>
+            <button>+ 추가하기</button>
+        </div>
+        <!---MEMO-->
+        <div class="memobox">
+            <b id="memo">Memo</b>
+            <form>
+                <textarea placeholder="메모를 작성하세요"></textarea>
+                <input type="submit" value="save"/>
+            </form>
+        </div>
+        <!---WEATHER-->
+        <div class="weatherbox">
+            <img id="weatherIcon" src="" alt="WEATHER" >
+            <b><span id="tem"></span><span id="loc"></span></b>
+        </div>
+    </div>
+    <!---------------MAIN-BOX---------------->
+    <div class="mainbox">
+        <!--BACKGROUND COLOR-->
+        <button id="color"><b>Color</b></button>  
+        <div class="colorList hidden">
+            <button class="changeColor" id="0" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="1" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="2" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="3" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="4" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="5" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="6" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="7" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="8" onclick="changeBackgroundColor(this.id)"></button>
+            <button class="changeColor" id="9" onclick="changeBackgroundColor(this.id)"></button>
+        </div>
+        <!---WEEKLY TO-DO LIST-->
         <table class="weeklytask hidden">
             <caption><b>📃 Weekly Task </b></caption>
                 <th>Mon</th>
@@ -29,43 +63,48 @@
                 <th>Sun</th>
             <tr>
                 <td><ul class="todo-list" id="0" > 
-                </ul><form class="todo-list-form" id="0" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="0" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="1" >
-                </ul><form class="todo-list-form" id="1" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="1" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="2" >
-                </ul><form class="todo-list-form" id="2" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="2" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="3" >
-                </ul><form class="todo-list-form" id="3" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="3" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="4">
-                </ul><form class="todo-list-form" id="4" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo"  maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="4" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo"  maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="5">
-                </ul><form class="todo-list-form" id="5" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="5" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
                 <td><ul class="todo-list" id="6">
-                </ul><form class="todo-list-form" id="6" onsubmit="toDoSubmit(event, this.id)"><input type="submit" value="+"/><input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
+                </ul><form class="todo-list-form" id="6" onsubmit="toDoSubmit(event, this.id)">
+                    <input type="submit" value="+"/>
+                    <input class="newtodo" maxlength="30" type="text" placeholder="Enter what to do."/></form></td>
             </tr>  
-            <button class="hidden" id="deleteAll"><b>🗑️ Delete All</b></button>  
         </table>
-        
-        
-        
-        <button id="color"><b>Color</b></button>  
-        <ul class="colorList hidden">
-            <li><button class="changeColor" id="0" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="1" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="2" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="3" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="4" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="5" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="6" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="7" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="8" onclick="changeBackgroundColor(this.id)"></button></li>
-            <li><button class="changeColor" id="9" onclick="changeBackgroundColor(this.id)"></button></li>
-        </ul>
-        <p id="heart"></p>
+        <button class="hidden" id="deleteAll"><b>🗑️ delete all</b></button>  
+    </div>
+        <!---------------LOGIN---------------->
+        <form id="login-form" class="hidden">
+            <input required maxlength="15" type="text" placeholder="Please write you name" class=""/>
+            <input type="submit" value="Enter&crarr;"/>
+        </form>
+
         <script src="JS/background.js"></script>
         <script src="JS/greeting.js"></script>
         <script src="JS/clock.js"></script>
         <script src="JS/todo.js"></script>
         <script src="JS/weather.js"></script>
+        <script src="JS/memo.js"></script>
 </body>
 </html>

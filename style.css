@@ -2,87 +2,156 @@ button {
     cursor:pointer;
 }
 
-#date {
-    position:absolute;
-    top:30px; 
-    left:50px;
-    font-family: Papyrus, fantasy;
-    font-size: 13pt;
-}
-
-#clock{
-    border:3px solid;
-    background-color: rgba( 255, 255, 255, 0.5 );
-    border-radius: 67% 35% 80% 50%;
-    height: 50px;
-    width: 130px;
-    position:absolute;
-    top:55px;
-    left:35px;
-    text-align: center;
-    justify-content: center;
-    font-family: Papyrus, fantasy;
-    font-size: 22pt;
-}
-
-
-#weather img{
+/* ------------SIDE BOX------------ */
+.sidebox{
     position:fixed;
-    bottom:55px;
-    left:35px;
-    width:60px;
+    top:40px; 
+    left:30px;
+    height: 90%;
+    width: 16%;
+    background-color: rgba( 255, 255, 255, 0.2 );
+    border-radius: 5%;
 }
 
-#weather span{
-    position:fixed;
-    bottom:55px;
-    left:105px;
-    font-family: Papyrus, fantasy;
-    font-size: 20pt;
-}
-
-#color{
-    background-color: rgba( 255, 255, 255, 0.5 );
-    cursor:pointer;
-    position:absolute;
-    top:55px;
-    right:35px;
-    border:3px solid;
-    border-radius: 67% 35% 80% 50%;
-    height: 50px;
-    width: 130px;
-    font-family: Papyrus, fantasy;
-    font-size: 22pt;
-}
-
-.colorList {
-    list-style: none;
-    position:absolute;
-    top:90px;
-    right:68px;
-}
-
-.changeColor {
-    border: 3px solid;
-    border-radius: 100px;
-    height: 30px;
-    width: 30px;
-    margin:3px;
-}
-
-.hidden {
-    display:none;
-}
-
+/* -----USER NAME----- */
 #greeting {
     font-family: Papyrus, fantasy;
-    height:100%; 
-    width:100%; 
+    position:absolute;
+    top:15px; 
+    left:40px;
     text-align:center;
-    padding-top: 50px;
-    cursor: pointer;
+    font-size: 18pt;
 }
 
+/* -----DATE TIME----- */
+.daybox{
+    position:absolute;
+    top:8%; 
+    left:5%;
+    height: 13%;
+    width: 90%;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    border-radius: 10%;
+}
+#clock{
+    position:absolute;
+    top:8%;
+    left:33%;
+    font-family: Papyrus, fantasy;
+    font-size: 18pt;
+}
+#date {
+    position:absolute;
+    top:40%; 
+    left:10%;
+    font-family: Papyrus, fantasy;
+    font-size: 18pt;
+    border-radius: 67% 35% 80% 50%;
+    border:2px solid;
+    height: 45%;
+    width: 80%;
+    text-align: center;
+    vertical-align: center;
+}
+
+/* -------D-DAY------- */
+.ddaybox{
+    position:absolute;
+    top:23%; 
+    left:5%;
+    height: 17%;
+    width: 90%;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    border-radius: 5%;
+}
+#dday{
+    position:absolute;
+    top:10%;
+    left:40%;
+    font-family: Papyrus, fantasy;
+    font-size: 15pt;
+}
+.ddaybox button{
+    position:absolute;
+    top:50%;
+    left:35%;
+    font-family: Papyrus, fantasy;
+    font-size: 10pt;
+}
+
+/* -------MEMO------- */
+.memobox{
+    position:absolute;
+    top:42%; 
+    left:5%;
+    height: 45%;
+    width: 90%;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    border-radius: 5%;
+}
+#memo{
+    position:absolute;
+    top:3%;
+    left:40%;
+    font-family: Papyrus, fantasy;
+    font-size: 15pt;
+}
+.memobox form textarea{
+    font-family: Papyrus, fantasy;
+    position:absolute;
+    top:13%; 
+    left:3.5%;
+    height: 72%;
+    width: 84%;
+    background-color: transparent;
+    border-radius: 5%;
+    border: 2px solid;
+    padding:10px;
+}
+.memobox form input{
+    font-family: Papyrus, fantasy;
+    position:absolute;
+    top:89%; 
+    left:23%;
+    height: 10%;
+    width: 50%;
+    background-color: transparent;
+    border:0;
+    cursor:pointer;
+    font-size: 25px;
+}
+
+/* -------WEATHER------- */
+.weatherbox{
+    position:absolute;
+    top:89%; 
+    left:5%;
+    height: 9%;
+    width: 90%;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    border-radius: 10%;
+}
+.weatherbox img{
+    width:20%;
+    position:absolute;
+    top:20%; 
+}
+.weatherbox #tem{
+    position:absolute;
+    top:20%; 
+    left:18%;
+    font-family: Papyrus, fantasy;
+    font-size: 25pt;
+}
+.weatherbox #loc{
+    position:absolute;
+    top:38%; 
+    left:50%;
+    font-family: Papyrus, fantasy;
+    font-size: 15pt;
+}
+
+/* -------LOGIN------- */
 #login-form{
     position: absolute;
     top: 50%;
@@ -93,7 +162,6 @@ button {
     text-align:center;
     background-color:transparent;
 }
-
 #login-form input{
     font-family: Lucida Console, monospace;
     height: 30pt;
@@ -101,14 +169,12 @@ button {
     justify-content: center;
     background-color:transparent;  
 }
-
 #login-form input[type="text"]{
     font-size: 20pt;
     width: 470px;
     border:0 ;
     border-bottom:3px double;
 }
-
 #login-form input[type="submit"]{
     background-color: rgba( 255, 255, 255, 0.5 );
     font-size: 14pt;
@@ -117,81 +183,113 @@ button {
     margin-left:10pt;
 }
 
-.weeklytask {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -800px; 
-    z-index: 1;
+/* ------------MAIN BOX------------ */
+.mainbox{
+    position:fixed;
+    top:40px; 
+    right:30px;
+    height: 90%;
+    width: 80%;
+    background-color: rgba( 255, 255, 255, 0.2 );
+    border-radius: 3%;
 }
 
+/* -----BACKGROUND COLOR----- */
+#color{
+    background-color: rgba( 255, 255, 255, 0.5 );
+    cursor:pointer;
+    position:absolute;
+    top:30px;
+    right:35px;
+    border:3px solid;
+    border-radius: 67% 35% 80% 50%;
+    height: 50px;
+    width: 130px;
+    font-family: Papyrus, fantasy;
+    font-size: 18pt;
+}
+.colorList {
+    list-style: none;
+    position:absolute;
+    top:40px;
+    right:180px;
+}
+.changeColor {
+    border: 3px solid;
+    border-radius: 100px;
+    height: 30px;
+    width: 30px;
+    margin:1px;
+}
+
+/* -----WEEKLY-TO-DO-LIST----- */
+.weeklytask {
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 .weeklytask caption {
     font-family: Papyrus, fantasy;
     font-size: 15pt;
     text-align: left;
     padding: 13px;
 }
-
-#deleteAll{
-    font-family: Papyrus, fantasy;
-    font-size: 20pt;
-    position:fixed;
-    bottom:55px;
-    right:35px;
-}
-
 .weeklytask input[type="submit"], button{
     background-color:transparent;
     cursor:pointer;
     border:0;
     font-size: 15pt;
 }
-
 .newtodo{
     background-color:transparent;
-    width:180px;
+    width:80%;
     font-size: 13pt;
     font-family: Papyrus, fantasy;
     border: 0;
 }
-
 .weeklytask th{
     font-family: Papyrus, fantasy;
     border:2px solid;
-    font-size: 13pt;
+    font-size: 11pt;
     height: 30px;
-    width: 220px;
-    padding-top:3px;
-    padding-bottom:3px;
+    width: 8%;
+    padding-top:1px;
+    padding-bottom:1px;
     background-color: rgba( 255, 255, 255, 0.5 );
 }
-
 .weeklytask td{
     font-family: Papyrus, fantasy;
     border:2px solid;
-    font-size: 13pt;
-    height: 350px;
-    width: 220px;
-    padding:3px;
+    font-size: 11pt;
+    height: 500px;
+    width: 8%;
+    padding:1px;
     vertical-align: top;
     background-color: rgba( 255, 255, 255, 0.5 );
 }
-
 .todo-list {
     list-style:none;
     padding-left:0px;
 }
-
 .done {
     text-decoration: line-through;
 }
 
-#heart {
-    position:fixed;
-    height: 100%;
-    width:100%;
-    cursor: pointer;
-    z-index:-1;
+#deleteAll{
+    background-color: rgba( 255, 255, 255, 0.5 );
+    font-family: Papyrus, fantasy;
+    font-size: 13pt;
+    position:absolute;
+    bottom:30px;
+    right:35px;
+    border:3px solid;
+    border-radius: 67% 35% 80% 50%;
+    height: 50px;
+    width: 130px;
 }
 
+.hidden {
+    display:none;
+}

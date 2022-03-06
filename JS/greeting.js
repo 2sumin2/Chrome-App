@@ -4,7 +4,6 @@ const sayHello = document.querySelector("#greeting");
 const savedUsername = localStorage.getItem("username");
 const taskTable = document.querySelector(".weeklytask");
 const clearBtn = document.querySelector("#deleteAll");
-const heartBtn = document.querySelector("#heart");
 
 function onLogIn(event) {
     event.preventDefault();
@@ -17,19 +16,9 @@ function onLogIn(event) {
 }
 
 function printGreeting(username) {
-    sayHello.innerText = `Hello, ${username}`;
+    sayHello.innerText = `Hi, ${username}`;
     sayHello.classList.remove("hidden");
 }
-
-function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen()
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen()
-      }
-    }
-  }
 
 if (savedUsername == null) {
     loginForm.classList.remove("hidden");
@@ -40,6 +29,5 @@ if (savedUsername == null) {
 }
 
 loginForm.addEventListener("submit", onLogIn);
-sayHello.addEventListener("click", toggleFullScreen);
-heartBtn.addEventListener("click", toggleFullScreen);
+
 
