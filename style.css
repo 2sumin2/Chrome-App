@@ -178,21 +178,21 @@ button {
 .weatherbox img{
     width:20%;
     position:absolute;
-    top:20%; 
+    top:18%; 
 }
 .weatherbox #tem{
     position:absolute;
-    top:20%; 
-    left:18%;
+    top:22%; 
+    left:23%;
     font-family: Papyrus, fantasy;
-    font-size: 25pt;
+    font-size: 20pt;
 }
 .weatherbox #loc{
     position:absolute;
-    top:38%; 
-    left:50%;
+    top:45%; 
+    left:55%;
     font-family: Papyrus, fantasy;
-    font-size: 15pt;
+    font-size: 13pt;
 }
 
 /* -------LOGIN------- */
@@ -237,7 +237,17 @@ button {
     background-color: rgba( 255, 255, 255, 0.2 );
     border-radius: 3%;
 }
+.mainbox::-webkit-scrollbar{
+    background-color: transparent;
+    width: 10px;
+    
+    
+}
+.mainbox::-webkit-scrollbar-thumb{
+    background-color:rgba(167, 150, 129, 0.2);
+    border-radius: 50px;
 
+}
 /* -----BACKGROUND COLOR----- */
 #color{
     background-color: rgba( 255, 255, 255, 0.5 );
@@ -272,7 +282,7 @@ button {
     padding:1%;
 }
 .monthlytask ,.weeklytask{
-    z-index: 1;
+    z-index: -1;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -283,12 +293,13 @@ button {
 .weeklytask{
     position: absolute;
     top: 25%;
+    padding-bottom:10%;
 }
 #year-month{
     font-family: Papyrus, fantasy;
     font-size: 18pt;
 }
-.monthlytask input[type="submit"]{
+.monthlytask button{
     background-color: transparent;
     border:0;
 }
@@ -346,9 +357,9 @@ button {
     background-color: rgba( 255, 255, 255, 0.5 );
     font-family: Papyrus, fantasy;
     font-size: 13pt;
-    position:absolute;
-    bottom:30px;
-    right:35px;
+    position:fixed;
+    bottom:70px;
+    right:70px;
     border:3px solid;
     border-radius: 67% 35% 80% 50%;
     height: 50px;
