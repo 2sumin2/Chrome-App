@@ -28,6 +28,16 @@
   <ul>
     <li>로컬 스토리지에 저장되어 있는 메모가 있으면 출력</li>
   </ul>
+  <span><li>날씨와 위치 (geolocation)</li></span>
+  <ul>
+    <li>현재 위치한 도시와 현재 기온 표시</li>
+    <li>현재 날씨 아이콘 표시</li>
+  </ul>
+  <span><li>배경 색상 변경</li></span>
+  <ul>
+    <li>배경 색상 랜덤 출력</li>
+    <li>Color버튼으로 원하는 배경색 선택 후 출력</li>
+  </ul>
   <span><li>로컬 스토리지를 사용한 투두리스트</li></span>
   <ul>
     <li>요일별로 할일 입력받기</li>
@@ -41,19 +51,5 @@
     </ul>
     <li>완료된 일은 체크</li>
     <li>목록 전체 삭제</li>
-  </ul>
- <span><li>배경 이미지 변경</li></span>
-  <ul>
-    <li>배경 랜덤 출력</li>
-    <li>Color버튼으로 원하는 배경색 선택 후 출력</li>
-  </ul>
- <span><li>날씨와 위치 (geolocation)</li></span>
-  <ul>
-    <li>현재 위치한 도시와 현재 기온 표시</li>
-    <li>현재 날씨 아이콘 표시</li>
-  </ul>
-  <span><li>전체화면</li></span>
-  <ul>
-    <li>화면 클릭하면 Fullscreen</li>
   </ul>
  </ol>
