@@ -2,17 +2,16 @@ const monthlyTaskTable = document.querySelector(".monthlytask");
 const yearMonth = monthlyTaskTable.querySelector("#year-month");
 const previousMonBtn = monthlyTaskTable.querySelector("#premonth");
 const nextMonBtn = monthlyTaskTable.querySelector("#nextmonth");
-const today = new Date();
-let year = today.getFullYear();
-let month = today.getMonth();
-let date = today.getDate();
+//const today = new Date();
+//let year = today.getFullYear();
+//let month = today.getMonth();
+//let date = today.getDate();
 
 printCalender(year, month, date);
 let monthlyToDoList = document.querySelectorAll(".monthly-todo-list");
 let monthlyToDoForm = document.querySelectorAll(".monthly-todo-list-form");
 let monthlyToDoInput = document.querySelectorAll('.monthly-newtodo');
 
-///////////////////////////////////////
 let monthlyToDos = [];
 for (i=0;i<31;i++){
     monthlyToDos[i] = [];
@@ -20,11 +19,7 @@ for (i=0;i<31;i++){
 
 function saveMonthlyTask (day) {
     day = parseInt(day);
-    //if(monthlyToDos[day].length==0){
-    //    localStorage.removeItem(day+6);
-    //}else{
     localStorage.setItem(day+6, JSON.stringify(monthlyToDos[day]));
-    //}
 }
 
 function deleteMonthlyTask (event) {
@@ -38,10 +33,7 @@ function deleteMonthlyTask (event) {
 function finishMonthlyTask(event) {
     const li = event.target.parentElement;
     const day = li.parentElement.id;
-    console.log(monthlyToDos[day].length);
     for (i=0; i<monthlyToDos[day].length;i++) {
-        //console.log(li.id);
-        //console.log(monthlyToDos[day-1][i]);
         if (monthlyToDos[day][i].id == li.id){
             const changeElement = monthlyToDos[day][i];
             console.log(monthlyToDos[day-1]);
@@ -100,20 +92,17 @@ function MonthlyTaskSubmit(day, event) {
     };
 }
 
-for (i=0; i<31; i++) {
-    const savedmonthlyToDos = localStorage.getItem(i+7);
-    if(savedmonthlyToDos != null){
-        const parsemonthlyToDos = JSON.parse(savedmonthlyToDos);  
-        monthlyToDos[i] = parsemonthlyToDos;
-        console.log(i);
-        console.log(parsemonthlyToDos);
-
-        
-        parsemonthlyToDos.forEach((item)=> (printMonthlyTask(i+1, item), monthlyToDos[i+1].push(item)));
+function getLocalStorage() {
+    for (i=0; i<31; i++) {
+        const savedmonthlyToDos = localStorage.getItem(i+7);
+        if(savedmonthlyToDos != null){
+            const parsemonthlyToDos = JSON.parse(savedmonthlyToDos);  
+            monthlyToDos[i] = parsemonthlyToDos;
+            parsemonthlyToDos.forEach((item)=> (printMonthlyTask(i+1, item), monthlyToDos[i+1].push(item)));
+        }
     }
 }
 
-///////////////////////////////////////////////////////////////////
 function printDate(date, firstDay) {
     cell = row.insertCell();
     cell.id = i;
@@ -166,6 +155,8 @@ function removeCalendar() {
     }
 }
 
+
+getLocalStorage();
 previousMonBtn.addEventListener("click", function() {
     month -= 1;
     removeCalendar();
@@ -173,8 +164,10 @@ previousMonBtn.addEventListener("click", function() {
 		year -= 1;
 		month = 12;
 	}
-    printCalender(year, month, date)
+    printCalender(year, month, date);
+    getLocalStorage();
 });
+
 nextMonBtn.addEventListener("click", function() {
     month += 1;
     removeCalendar();
@@ -182,5 +175,6 @@ nextMonBtn.addEventListener("click", function() {
 		year += 1;
 		month = 1;
 	}
-    printCalender(year, month, date)
+    printCalender(year, month, date);
+    getLocalStorage();
 });

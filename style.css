@@ -296,7 +296,7 @@ button {
     top: 25%;
     padding-bottom:10%;
 }
-#year-month{
+#year-month, #year-month-week{
     font-family: Papyrus, fantasy;
     font-size: 18pt;
 }

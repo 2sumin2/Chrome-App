@@ -4,6 +4,7 @@ const toDoInput = document.querySelectorAll('.todo-list-form input[type="text"]'
 const deleteAllBtn = document.querySelector("#deleteAll");
 const categoryMonth = document.querySelector("#category1");
 const categoryWeek = document.querySelector("#category2");
+const yearMonthWeek = document.querySelector("#year-month-week");
 
 const toDos = [[],[],[],[],[],[],[]];
 function saveToDo (day) {
@@ -90,6 +91,16 @@ for (i=0; i<7; i++) {
         parseToDos.forEach((item)=> printToDo(i, item));
     }
 }
+
+const today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth();
+let date = today.getDate();
+const firstDateDay = new Date(year,month,1).getDay();
+const thisWeek = Math.ceil((firstDateDay + date) / 7);
+const week = ["1st", "2nd", "3rd", "4th", "5th"]
+
+yearMonthWeek.innerText = `${year} - ${monthNames[month]} - ${week[thisWeek-1]} week`;
 
 function clearTable() {
     for (i=0; i<7; i++) {
