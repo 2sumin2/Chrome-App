@@ -1,5 +1,5 @@
 const backgroundColorList = [
-    "#ff9a9e 0%, #fad0c4 99%, #fad0c4 100%", 
+    "#ff9a9e 0%, #fce7e1 99%, #fad8cf 100%", 
     "#d5dee7 0%, #ffafbd 0%, #c9ffbf 100%", 
     "#fad0c4 0%, #ace0f9 100%" , 
     "#bef6fa 0%, #e8f986 100%" , 
