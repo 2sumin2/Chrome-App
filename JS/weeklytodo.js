@@ -103,9 +103,15 @@ const week = ["1st", "2nd", "3rd", "4th", "5th"]
 yearMonthWeek.innerText = `${year} - ${monthNames[month]} - ${week[thisWeek-1]} week`;
 
 function clearTable() {
-    for (i=0; i<7; i++) {
+    if(taskTable.classList.contains("hidden")) {
+        for (i=7; i<38; i++) {
             localStorage.removeItem(i);
         }
+    } else{
+        for (i=0; i<7; i++) {
+            localStorage.removeItem(i);
+        }
+    }
     window.location.reload();
 }
 
