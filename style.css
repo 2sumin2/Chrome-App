@@ -315,7 +315,7 @@ button {
     width:80%;
     font-size: 13pt;
     font-family: Papyrus, fantasy;
-    border: 0.5px groove;
+    border: 0;
 }
 
 .weeklytask th, .monthlytask th{

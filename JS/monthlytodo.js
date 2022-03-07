@@ -121,7 +121,7 @@ function printDate(date, firstDay) {
         `<ul class="monthly-todo-list" id="${i}"></ul>
         <form class="monthly-todo-list-form" id="${i}" onsubmit="MonthlyTaskSubmit(this.id, event)">
         <input class="monthly-todo-input" id="${year}-${month}-${i}" type="submit" value="+" style="background-color:transparent; cursor:pointer; border:0; font-size: 13pt;"/>
-        <input class="monthly-newtodo" maxlength="30" type="text"/>
+        <b><input class="monthly-newtodo" maxlength="30" type="text" style="font-size:11pt" placeholder="write.."/></b>
         </form></td>`;
 
     if(firstDay==7){
