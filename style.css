@@ -289,6 +289,7 @@ button {
 .monthlytask{
     position: absolute;
     top: 13%;
+    padding-bottom:10%;
 }
 .weeklytask{
     position: absolute;
@@ -309,13 +310,14 @@ button {
     border:0;
     font-size: 15pt;
 }
-.newtodo{
+.newtodo, .monthly-newtodo{
     background-color:transparent;
     width:80%;
     font-size: 13pt;
     font-family: Papyrus, fantasy;
     border: 0.5px groove;
 }
+
 .weeklytask th, .monthlytask th{
     font-family: Papyrus, fantasy;
     border:2px solid;
@@ -346,7 +348,7 @@ button {
     vertical-align: top;
     background-color: rgba( 255, 255, 255, 0.5 );
 }
-.todo-list {
+.todo-list, .monthly-todo-list{
     list-style:none;
     padding-left:0px;
 }

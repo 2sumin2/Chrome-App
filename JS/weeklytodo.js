@@ -14,6 +14,7 @@ function deleteToDo (event) {
     const li = event.target.parentElement;
     const day = li.parentElement.id;
     toDos[day] = toDos[day].filter((toDo) => toDo.id !== parseInt(li.id));
+    console.log(li);
     li.remove();
     saveToDo(day);
 }
@@ -41,6 +42,7 @@ function finishToDo(event) {
 function printToDo(day, newToDo) {
     const li = document.createElement("li");
     li.id = newToDo.id;
+    console.log(li.id);
     const checkBtn = document.createElement("button");
     const span = document.createElement("span");
     const deleteBtn = document.createElement("button");
@@ -61,8 +63,10 @@ function printToDo(day, newToDo) {
     toDoList[day].appendChild(li);
 }
 
-function toDoSubmit(event, day) {
+function toDoSubmit(day, event) {
     event.preventDefault();
+    console.log(day);
+    
     const newToDo = toDoInput[day].value;
     if(newToDo.split() != "") {
         const newToDoObj = {
@@ -75,6 +79,7 @@ function toDoSubmit(event, day) {
         printToDo(day, newToDoObj);
         saveToDo(day);
     };
+    
 }
 
 for (i=0; i<7; i++) {
