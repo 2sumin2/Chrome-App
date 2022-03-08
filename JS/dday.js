@@ -10,6 +10,13 @@ const ddayCountLabel = ddayBox.querySelector("#dday-remaining");
 const ddayDateLabel = ddayBox.querySelector("#dday-date");
 const ddayDeleteBtn = ddayBox.querySelector("#dday-delete");
 
+function toggleElement() {
+    ddayLabel.classList.toggle("hidden");
+    ddayAddForm.classList.toggle("hidden");
+    ddayCountBox.classList.toggle("hidden");
+    ddayAddBtn.classList.toggle("hidden");
+}
+
 function showDday(name, date) {
     ddayTitleLabel.innerText = name;
     ddayDateLabel.innerText = date;
@@ -19,23 +26,21 @@ function showDday(name, date) {
 function countDate(day) {
     const newday = new Date(day);
     const today = new Date();
-    let count = Math.round((today.getTime()-newday.getTime()) / 1000/60/60/24);
+    let count = Math.floor((today.getTime()-newday.getTime()) / 1000/60/60/24);
     if (count==0) {
         count = " - day";
         ddayCountLabel.style.color = "rgb(253, 43, 78)";
-    } else if (count>0) {
-        count = " + "+count;
-    } else {
+    } else if (count<0) {
         count = " - "+Math.abs(count);
+    } else {
+        count = " + "+count;
     }
     ddayCountLabel.innerText = `D${count}`;
 }
 
 function ddayRemove() {
-    ddayLabel.classList.remove("hidden");
-    ddayAddForm.classList.add("hidden");
-    ddayCountBox.classList.add("hidden");
-    ddayAddBtn.classList.remove("hidden");
+    toggleElement();
+    ddayAddForm.classList.toggle("hidden");
     ddaySetName.value ="";
     ddaySetDate.value ="";
     localStorage.removeItem("dday");
@@ -47,10 +52,9 @@ function ddaySave(list){
 
 function ddaySubmit(event) {
     event.preventDefault();
-    ddayLabel.classList.add("hidden");
-    ddayAddForm.classList.add("hidden");
-    ddayCountBox.classList.remove("hidden");
+    toggleElement();
     showDday(ddaySetName.value, ddaySetDate.value);
+    ddayAddBtn.classList.toggle("hidden");
     const ddayList = [ddayTitleLabel.innerText, ddayDateLabel.innerText];
     ddaySave(ddayList);
 }
@@ -63,17 +67,12 @@ ddayAddForm.addEventListener("submit", ddaySubmit);
 ddayDeleteBtn.addEventListener("click", ddayRemove);
 
 if(localStorage.getItem("dday")==null){
-    ddayLabel.classList.remove("hidden");
-    ddayAddForm.classList.add("hidden");
-    ddayCountBox.classList.add("hidden");
-    ddayAddBtn.classList.remove("hidden");
+    toggleElement();
 } else{
     const data = localStorage.getItem("dday").split(",");
     const name = data[0];
     const date = data[1];
     showDday(name, date);
-    ddayLabel.classList.add("hidden");
-    ddayAddForm.classList.add("hidden");
-    ddayCountBox.classList.remove("hidden");
-    ddayAddBtn.classList.add("hidden");
+    //toggleElement();
+    ddayAddForm.classList.toggle("hidden");
 }

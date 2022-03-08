@@ -147,32 +147,35 @@ function printCalender (year, month, date) {
     }
 }
 
-function removeCalendar() {
+function resetCalendar() {
     while (monthlyTaskTable.rows.length > 2) {
         monthlyTaskTable.deleteRow(monthlyTaskTable.rows.length-1);
     }
 }
 
-
-getLocalStorage();
-previousMonBtn.addEventListener("click", function() {
+function previousMonth() {
     month -= 1;
-    removeCalendar();
+    resetCalendar();
     if(month == -1){
 		year -= 1;
 		month = 12;
 	}
     printCalender(year, month, date);
     getLocalStorage();
-});
+}
 
-nextMonBtn.addEventListener("click", function() {
+function nextMonth() {
     month += 1;
-    removeCalendar();
+    resetCalendar();
     if(month == 13){
 		year += 1;
 		month = 1;
 	}
     printCalender(year, month, date);
     getLocalStorage();
-});
+}
+
+previousMonBtn.addEventListener("click", previousMonth);
+nextMonBtn.addEventListener("click", nextMonth);
+
+getLocalStorage();
