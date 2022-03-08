@@ -13,7 +13,7 @@ let monthlyToDoForm = document.querySelectorAll(".monthly-todo-list-form");
 let monthlyToDoInput = document.querySelectorAll('.monthly-newtodo');
 
 let monthlyToDos = [];
-for (i=0;i<31;i++){
+for (i=0;i<32;i++){
     monthlyToDos[i] = [];
 }
 
@@ -36,7 +36,6 @@ function finishMonthlyTask(event) {
     for (i=0; i<monthlyToDos[day].length;i++) {
         if (monthlyToDos[day][i].id == li.id){
             const changeElement = monthlyToDos[day][i];
-            console.log(monthlyToDos[day-1]);
             if (changeElement.done == "yes") {
                 event.target.innerText = "☐ ";
                 changeElement.done = "no";
@@ -54,7 +53,7 @@ function printMonthlyTask(day, newToDo) {
     monthlyToDoList = document.querySelectorAll(".monthly-todo-list");
     const li = document.createElement("li");
     li.id = newToDo.id;
-    console.log(li.id);
+
     const checkBtn = document.createElement("button");
     const span = document.createElement("span");
     const deleteBtn = document.createElement("button");
@@ -93,7 +92,7 @@ function MonthlyTaskSubmit(day, event) {
 }
 
 function getLocalStorage() {
-    for (i=0; i<31; i++) {
+    for (i=0; i<32; i++) {
         const savedmonthlyToDos = localStorage.getItem(i+7);
         if(savedmonthlyToDos != null){
             const parsemonthlyToDos = JSON.parse(savedmonthlyToDos);  
@@ -120,7 +119,6 @@ function printDate(date, firstDay) {
         cell.style = "color:rgb(47, 47, 167)";
     }
     if(i==date){
-        console.log(i);
         const style = cell.getAttribute("style") + ";";
         cell.setAttribute("style", style + "background-color:rgba(255,228,196, 0.2);" );
     }
