@@ -7,6 +7,15 @@ const clearBtn = document.querySelector("#deleteAll");
 const sideBox = document.querySelector(".sidebox");
 const mainBox = document.querySelector(".mainbox");
 
+function resizehandler() {
+    if(window.outerWidth<1500) {
+        sideBox.classList.add("hidden");
+        mainBox.style.width = "95%";
+    } else {
+        sideBox.classList.remove("hidden");
+        mainBox.style.width = "80%";
+    }
+}
 function loginPage() {
     loginForm.classList.remove("hidden");
     taskTable.classList.add("hidden");
@@ -42,5 +51,5 @@ if (savedUsername == null) {
 }
 
 loginForm.addEventListener("submit", onLogIn);
-
+window.addEventListener("resize", resizehandler);
 
