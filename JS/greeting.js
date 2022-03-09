@@ -24,9 +24,13 @@ function resizehandlerMore() {
 }
 
 function resizehandler() {
+    for(i=0;i<7;i++){
+        tds[i].style.height = `${window.outerHeight/4}px`;
+    }
     if (window.outerWidth < 600 ) {
         sideBox.classList.add("hidden");
-        mainBox.style.width = "95%";
+        mainBox.style.width = "88%";
+
         //taskTable.style = "margin-left:20%";
         for(i=0; i<3;i+=2){
             ths[i].classList.add("hidden");
