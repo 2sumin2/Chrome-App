@@ -8,14 +8,49 @@ const sideBox = document.querySelector(".sidebox");
 const mainBox = document.querySelector(".mainbox");
 
 function resizehandler() {
-    if(window.outerWidth<1500) {
+    const ths = taskTable.querySelectorAll("th");
+    const tds = taskTable.querySelectorAll("td");
+    if (window.outerWidth < 600 ) {
         sideBox.classList.add("hidden");
         mainBox.style.width = "95%";
+        //taskTable.style = "margin-left:20%";
+        for(i=0; i<3;i+=2){
+            ths[i].classList.add("hidden");
+        }
+        for (i = 0; i < 7; i++) {
+            const today = new Date();
+            if (tds[i].querySelector("ul").id != today.getDay()) {
+                tds[i].classList.add("hidden");
+                ths[i + 3].classList.add("hidden");
+                tds[i].classList.add("zerosize");
+                ths[i + 3].classList.add("zerosize");
+            }
+            tds[today.getDay()].classList.add("fullsize");
+            ths[today.getDay() + 3].classList.add("fullsize");
+        }
+    } else if (window.outerWidth < 1500) {
+        //taskTable.style = "margin-left:0";
+        sideBox.classList.add("hidden");
+        mainBox.style.width = "95%";
+        for(i=0; i<3;i+=2){
+            ths[i].classList.remove("hidden");
+        }
+        for (i = 0; i < 7; i++) {
+            tds[i].classList.remove("hidden");
+            ths[i+3].classList.remove("hidden");
+            tds[i].classList.remove("zerosize");
+            ths[i+3].classList.remove("zerosize");
+            tds[i].classList.remove("fullsize");
+            ths[i+3].classList.remove("fullsize");
+            }
+        
+
     } else {
         sideBox.classList.remove("hidden");
         mainBox.style.width = "80%";
     }
 }
+
 function loginPage() {
     loginForm.classList.remove("hidden");
     taskTable.classList.add("hidden");

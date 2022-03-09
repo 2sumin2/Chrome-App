@@ -370,3 +370,10 @@ button {
 .hidden {
     display:none;
 }
+
+.zerosize {
+    width:0;
+}
+.fullsize {
+    width:100%;
+}
