@@ -53,3 +53,4 @@ if (savedUsername == null) {
 loginForm.addEventListener("submit", onLogIn);
 window.addEventListener("resize", resizehandler);
 
+resizehandler();
