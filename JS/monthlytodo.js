@@ -7,15 +7,17 @@ const nextMonBtn = monthlyTaskTable.querySelector("#nextmonth");
 //let month = today.getMonth();
 //let date = today.getDate();
 
+let monthlyToDos = [];
+for (i=0;i<32;i++){
+    monthlyToDos[i] = [];
+}
+
 printCalender(year, month, date);
 let monthlyToDoList = document.querySelectorAll(".monthly-todo-list");
 let monthlyToDoForm = document.querySelectorAll(".monthly-todo-list-form");
 let monthlyToDoInput = document.querySelectorAll('.monthly-newtodo');
 
-let monthlyToDos = [];
-for (i=0;i<32;i++){
-    monthlyToDos[i] = [];
-}
+
 
 function saveMonthlyTask (day) {
     day = parseInt(day);

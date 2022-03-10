@@ -12,5 +12,5 @@ function memoSubmit(event) {
 }
 
 memoForm.addEventListener("submit", memoSubmit);
-
+memoForm.addEventListener("focusout", memoSubmit);
 memoTextBox.value = localStorage.getItem("memo");
