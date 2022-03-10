@@ -97,4 +97,11 @@
         </ul>
     </ul>
   </ol>
+
+  <span><li>창 크기에 따른 이벤트</li></span>
+  <ul>
+    <li>sidebox와 mainbox</li>
+    <li>sidebox숨기기</li>
+    <li>sidebox숨기고 주간task에서 오늘날짜에 해당하는 요일만 보이기</li>
+  </ul>
  </ol>
