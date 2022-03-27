@@ -1,7 +1,8 @@
 # Chrome-App
 ### Vanilla JS로 Chrome-App 만들기
 
-<br>
+<span>page: https://2sumin2.github.io/Chrome-App/</span>
+
 <ol>
   <span><li>로컬 스토리지를 사용한 로그인</li></span>
   <ul>
