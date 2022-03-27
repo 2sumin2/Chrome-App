@@ -13,6 +13,18 @@ button {
     border-radius: 5%;
 }
 
+.sidebox::-webkit-scrollbar{
+    background-color: transparent;
+    width: 10px;
+    
+    
+}
+.sidebox::-webkit-scrollbar-thumb{
+    background-color:rgba(167, 150, 129, 0.2);
+    border-radius: 50px;
+
+}
+
 /* -----USER NAME----- */
 #greeting {
     font-family: Papyrus, fantasy;
