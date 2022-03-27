@@ -126,15 +126,15 @@ function printDate(year, month, date, firstDay) {
     cell = row.insertCell();
     cell.id = i;
     cell.innerHTML = i +
-        `<ul class="monthly-todo-list" id="${year}-${month}-${date}"></ul>
+        `<ul class="monthly-todo-list" id="${year}-${month + 1}-${i}"></ul>
         <form
             class="monthly-todo-list-form"
-            id="${year}-${month}-${date}"
+            id="${year}-${month + 1}-${i}"
             onsubmit="MonthlyTaskSubmit(this.id, event)"
         >
             <input
                 class="monthly-todo-input"
-                id="${year}-${month}-${date}"
+                id="${year}-${month + 1}-${i}"
                 type="submit" 
                 value="+" 
                 style="background-color:transparent; cursor:pointer; border:0; font-size: 13pt;"
