@@ -114,7 +114,7 @@ function getLocalStorage() {
                             !monthlyToDos[0][`${year}-${month + 1}-${i}`] ?
                                 monthlyToDos[0][`${year}-${month + 1}-${i}`] = [] : null
                         ),
-                        monthlyToDos[0][`${year}-${month + 1}-${i}`].push(item),
+                        monthlyToDos[0][`${year}-${month + 1}-${i}`].push(item)
                     )
                 )
             }
@@ -122,19 +122,19 @@ function getLocalStorage() {
     }
 }
 
-function printDate(date, firstDay) {
+function printDate(year, month, date, firstDay) {
     cell = row.insertCell();
     cell.id = i;
     cell.innerHTML = i +
-        `<ul class="monthly-todo-list" id="${i}"></ul>
+        `<ul class="monthly-todo-list" id="${year}-${month}-${date}"></ul>
         <form
             class="monthly-todo-list-form"
-            id="${year}-${month + 1}-${i}"
+            id="${year}-${month}-${date}"
             onsubmit="MonthlyTaskSubmit(this.id, event)"
         >
             <input
                 class="monthly-todo-input"
-                id="${year}-${month + 1}-${i}"
+                id="${year}-${month}-${date}"
                 type="submit" 
                 value="+" 
                 style="background-color:transparent; cursor:pointer; border:0; font-size: 13pt;"
@@ -174,11 +174,11 @@ function printCalender(year, month, date) {
     }
     for (i = 1; i <= lastDate; i++) {
         if (firstDay != 7) {
-            printDate(date, firstDay);
+            printDate(year, month, date, firstDay);
             firstDay += 1;
         } else {
             row = monthlyTaskTable.insertRow();
-            printDate(date, firstDay);
+            printDate(year, month, date, firstDay);
             firstDay = firstDay - 6;
         }
     }
