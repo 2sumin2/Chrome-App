@@ -10,29 +10,29 @@ const ths = taskTable.querySelectorAll("th");
 const tds = taskTable.querySelectorAll("td");
 
 function resizehandlerMore() {
-    for(i=0; i<3;i+=2){
+    for (i = 0; i < 3; i += 2) {
         ths[i].classList.remove("hidden");
     }
     for (i = 0; i < 7; i++) {
         tds[i].classList.remove("hidden");
-        ths[i+3].classList.remove("hidden");
+        ths[i + 3].classList.remove("hidden");
         tds[i].classList.remove("zerosize");
-        ths[i+3].classList.remove("zerosize");
+        ths[i + 3].classList.remove("zerosize");
         tds[i].classList.remove("fullsize");
-        ths[i+3].classList.remove("fullsize");
-        }
+        ths[i + 3].classList.remove("fullsize");
+    }
 }
 
 function resizehandler() {
-    for(i=0;i<7;i++){
-        tds[i].style.height = `${window.outerHeight/4}px`;
+    for (i = 0; i < 7; i++) {
+        tds[i].style.height = `${window.outerHeight / 4}px`;
     }
-    if (window.outerWidth < 600 ) {
+    if (window.outerWidth < 600) {
         sideBox.classList.add("hidden");
         mainBox.style.width = "88%";
 
         //taskTable.style = "margin-left:20%";
-        for(i=0; i<3;i+=2){
+        for (i = 0; i < 3; i += 2) {
             ths[i].classList.add("hidden");
         }
         for (i = 0; i < 7; i++) {
@@ -52,7 +52,10 @@ function resizehandler() {
         mainBox.style.width = "95%";
         resizehandlerMore();
     } else {
-        sideBox.classList.remove("hidden");
+        if (savedUsername != null) {
+            console.log(savedUsername);
+            sideBox.classList.remove("hidden");
+        }
         mainBox.style.width = "80%";
         resizehandlerMore();
     }
@@ -86,7 +89,7 @@ function printGreeting(username) {
 }
 
 if (savedUsername == null) {
-    loginForm.classList.remove("hidden");
+    loginPage();
 } else {
     printGreeting(savedUsername);
     MainPage();

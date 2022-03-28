@@ -5,6 +5,13 @@ const deleteAllBtn = document.querySelector("#deleteAll");
 const categoryMonth = document.querySelector("#category1");
 const categoryWeek = document.querySelector("#category2");
 const yearMonthWeek = document.querySelector("#year-month-week");
+const today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth();
+let date = today.getDate();
+const firstDateDay = new Date(year, month, 1).getDay();
+const thisWeek = Math.ceil((firstDateDay + date) / 7);
+const week = ["1st", "2nd", "3rd", "4th", "5th"];
 
 const toDos = [[], [], [], [], [], [], []];
 //[task, ["0":[]]]
@@ -93,13 +100,7 @@ for (i = 0; i < 7; i++) {
     }
 }
 
-const today = new Date();
-let year = today.getFullYear();
-let month = today.getMonth();
-let date = today.getDate();
-const firstDateDay = new Date(year, month, 1).getDay();
-const thisWeek = Math.ceil((firstDateDay + date) / 7);
-const week = ["1st", "2nd", "3rd", "4th", "5th"]
+
 
 yearMonthWeek.innerText = `${year} - ${monthNames[month]} - ${week[thisWeek - 1]} week`;
 
